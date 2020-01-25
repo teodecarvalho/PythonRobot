@@ -9,7 +9,7 @@ class Robot:
     def connect_pump(self, port):
         self.pump = serial.Serial(port, 9600, timeout=3)
 
-    def disconnect_pump(self, self):
+    def disconnect_pump(self):
         self.pump.close()
 
     def connect_robot(self, port):
