@@ -15,7 +15,10 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.setupUi(self)
 
         self.robot = robot
+        self.ui.PumpPort.setText("COM6")
+        self.ui.RobotPort.setText("COM4")
 
+        self.ui.Exit.clicked.connect(self.close)
         self.ui.ChooseFile.clicked.connect(self.select_file)
         self.ui.ActivatePump.clicked.connect(self.activate_pump)
         self.ui.DeactivatePump.clicked.connect(self.deactivate_pump)
@@ -23,8 +26,22 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.DisconnectPump.clicked.connect(self.disconnect_pump)
         self.ui.ConnectRobot.clicked.connect(self.connect_robot)
         self.ui.DisconnectRobot.clicked.connect(self.disconnect_robot)
-        # Clique na table de serviços em execução
-        #self.ui.tableView_ServExec.selectionModel().selectionChanged.connect(self.listar_itens)
+        self.ui.Left.clicked.connect(self.move_left)
+        self.ui.Right.clicked.connect(self.move_right)
+        self.ui.Fwd.clicked.connect(self.move_fwd)
+        self.ui.Rev.clicked.connect(self.move_rev)
+        self.ui.Up.clicked.connect(self.move_up)
+        self.ui.Down.clicked.connect(self.move_down)
+        self.ui.Hold.clicked.connect(self.robot.send_hold_signal)
+        self.ui.Resume.clicked.connect(self.robot.resume_activity)
+        self.ui.ResetZero.clicked.connect(self.robot.reset_zero)
+        self.ui.SendFile.clicked.connect(self.send_gcode_file)
+
+        self.ui.PumpDelay.valueChanged.connect(self.update_pump_speed)
+
+    def send_gcode_file(self):
+        file_path = self.ui.FileName.text()
+        self.robot.send_gcode_file(file_path)
 
     def select_file(self):
         self.ui.FileName.setText(QFileDialog.getOpenFileName()[0])
@@ -36,6 +53,10 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def deactivate_pump(self):
         self.robot.deactivate_pump()
         QMessageBox.information(QMessageBox(), "Sucess", "Pump Deactivated!")
+
+    def update_pump_speed(self):
+        pulse = self.ui.PumpDelay.value()
+        self.robot.update_pump_speed(pulse)
 
     def connect_pump(self):
         pump_port = self.ui.PumpPort.text()
@@ -54,6 +75,30 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def disconnect_robot(self):
         self.robot.disconnect_robot()
         QMessageBox.information(QMessageBox(), "Sucess", "Robot Disconnected!")
+
+    def move_left(self):
+        step_size = self.ui.XYStepSize.value()
+        self.robot.move_left(step_size)
+
+    def move_right(self):
+        step_size = self.ui.XYStepSize.value()
+        self.robot.move_right(step_size)
+
+    def move_fwd(self):
+        step_size = self.ui.XYStepSize.value()
+        self.robot.move_fwd(step_size)
+
+    def move_rev(self):
+        step_size = self.ui.XYStepSize.value()
+        self.robot.move_rev(step_size)
+
+    def move_up(self):
+        step_size = self.ui.ZStepSize.value()
+        self.robot.move_up(step_size)
+
+    def move_down(self):
+        step_size = self.ui.ZStepSize.value()
+        self.robot.move_down(step_size)
 
 if __name__ == "__main__":
     robot = Robot()
