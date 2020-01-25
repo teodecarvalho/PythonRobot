@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>797</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Exit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>640</y>
+      <width>112</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ResetZero">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>280</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Zero</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Hold">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>370</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hold when possible</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>231</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Speed</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>192</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Feed rate</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="FeedRate"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>192</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Pump delay</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="PumpDelay"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>192</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Step size (mm):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="StepSize"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>421</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Control</string>
+    </property>
+    <widget class="QPushButton" name="Up">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Up</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Shift+Up</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Right">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Right</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Right</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Left">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Left</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Left</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Rev">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>141</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Rev</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Down</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Down">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>140</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Down</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Shift+Down</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Fwd">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>19</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fwd</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+Up</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="ActivatePump">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>10</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Activate pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeactivatePump">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>60</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Deactivate pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ConnectPump">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>140</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect Pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ConnectRobot">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>190</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect Robot</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="FileName">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>541</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ChooseFile">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Choose file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SendFile">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>50</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Resume">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>410</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Resume</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="RobotPort">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>190</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PumpPort">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>140</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DisconnectPump">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>140</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Disconnect Pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DisconnectRobot">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>190</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Disconnect Robot</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="CmdPump">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>541</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SendCmdPump">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>510</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send Cmd to Pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SendCmdRobot">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>560</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send Cmd to Robot</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="CmdRobot">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>541</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ReturnToZero">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>320</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Return to Zero</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>797</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
