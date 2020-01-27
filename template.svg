@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="template.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   id="svg8"
+   width="100mm"
+   height="70mm"
+   viewBox="0 0 100 70"
    version="1.1"
-   viewBox="0 0 100 100"
-   height="100mm"
-   width="100mm">
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="template.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.12"
-     inkscape:cx="121.13726"
-     inkscape:cy="78.386609"
+     inkscape:zoom="0.64"
+     inkscape:cx="807.32621"
+     inkscape:cy="-31.210988"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -39,8 +39,8 @@
      showguides="true"
      inkscape:guide-bbox="true">
     <inkscape:grid
-       id="grid1200"
-       type="xygrid" />
+       type="xygrid"
+       id="grid1200" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -50,15 +50,61 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15174422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 10,-3.7493044e-8 H 20 V 70 H 10 Z"
+       id="rect928"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15174422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 29.999999,-3.7493044e-8 H 40 V 70 H 29.999999 Z"
+       id="rect928-3"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15174422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 49.999999,-3.7493044e-8 H 60 V 70 H 49.999999 Z"
+       id="rect928-3-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15174422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 70.000001,-3.7493044e-8 H 80 V 70 h -9.999999 z"
+       id="rect928-3-8-2"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15174422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 90.000001,-3.7493044e-8 h 9.999994 V 70 h -9.999994 z"
+       id="rect928-3-8-2-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.18136904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 99.999995,9.9999999 V 20 H 0 V 9.9999999 Z"
+       id="rect928-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.18136904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 99.999995,30.000001 v 9.999998 H 0 v -9.999998 z"
+       id="rect928-1-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.18136904;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 99.999995,50 V 60.000002 H 0 V 50 Z"
+       id="rect928-1-1-7"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-197)">
+     transform="translate(0,-227)">
     <g
        id="g100"
        transform="translate(251.41071,138.25)"
@@ -175,15 +221,19 @@
              id="tspan54"
              sodipodi:role="line"
              y="50"
-             x="150">100</tspan><tspan
+             x="150">400</tspan><tspan
              sodipodi:role="line"
              y="62.5"
+             x="150"
+             id="tspan1486" /><tspan
+             sodipodi:role="line"
+             y="75"
              x="150"
              id="tspan5722" /></text>
         <flowRoot
            xml:space="preserve"
            id="flowRoot2633"
-           style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
              id="flowRegion2635"><rect
                id="rect2637"
                width="302.36221"
@@ -343,71 +393,6 @@
     <g
        id="g1440" />
     <g
-       id="g1578"
-       transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-       gcodetools="Gcodetools orientation group">
-      <g
-         id="g1560"
-         gcodetools="Gcodetools orientation point (3 points)">
-        <path
-           id="path1554"
-           style="stroke:none;fill:#000000;"
-           gcodetools="Gcodetools orientation point arrow"
-           d="m 0.0,100.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
-        <text
-           id="text1558"
-           xml:space="preserve"
-           y="90.0"
-           x="10.0"
-           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
-           gcodetools="Gcodetools orientation point text"><tspan
-             id="tspan1556"
-             sodipodi:role="line"
-             y="90.0"
-             x="10.0">(0.0; 0.0; 0.0)</tspan></text>
-      </g>
-      <g
-         id="g1568"
-         gcodetools="Gcodetools orientation point (3 points)">
-        <path
-           id="path1562"
-           style="stroke:none;fill:#000000;"
-           gcodetools="Gcodetools orientation point arrow"
-           d="m 100.0,100.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
-        <text
-           id="text1566"
-           xml:space="preserve"
-           y="90.0"
-           x="110.0"
-           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
-           gcodetools="Gcodetools orientation point text"><tspan
-             id="tspan1564"
-             sodipodi:role="line"
-             y="90.0"
-             x="110.0">(100.0; 0.0; -0.10000000149)</tspan></text>
-      </g>
-      <g
-         id="g1576"
-         gcodetools="Gcodetools orientation point (3 points)">
-        <path
-           id="path1570"
-           style="stroke:none;fill:#000000;"
-           gcodetools="Gcodetools orientation point arrow"
-           d="m 0.0,0.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
-        <text
-           id="text1574"
-           xml:space="preserve"
-           y="-10.0"
-           x="10.0"
-           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
-           gcodetools="Gcodetools orientation point text"><tspan
-             id="tspan1572"
-             sodipodi:role="line"
-             y="-10.0"
-             x="10.0">(0.0; 100.0; 0.0)</tspan></text>
-      </g>
-    </g>
-    <g
        id="g1696" />
     <g
        id="g1819" />
@@ -421,197 +406,93 @@
        id="g2460" />
     <g
        id="g2737" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 22,265 v -6 h 2 v 9 h -2 v 3 h -2 v -14 l 1,-1 v -1 h -3 v 1 l 1,1 v 14 h -2 v -14 h -1 v 3 h -1 v -3 h -2 v 11 h 2 v 2 h -3 v -10 -3 h -2 v 20 l -5,12"
-       id="path2910"
-       inkscape:connector-curvature="0" />
     <g
        id="g3008" />
     <g
        id="g3437" />
     <g
-       id="g3497"
-       gcodetools="Preview group">
-      <path
-         id="path3439"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 22.0,68.0 L 22.0,62.0" />
-      <path
-         id="path3441"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 22.0,62.0 L 24.0,62.0" />
-      <path
-         id="path3443"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 24.0,62.0 L 24.0,71.0" />
-      <path
-         id="path3445"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 24.0,71.0 L 22.0,71.0" />
-      <path
-         id="path3447"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 22.0,71.0 L 22.0,74.0" />
-      <path
-         id="path3449"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 22.0,74.0 L 20.0,74.0" />
-      <path
-         id="path3451"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 20.0,74.0 L 20.0,60.0" />
-      <path
-         id="path3453"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 20.0,60.0 L 21.0,59.0" />
-      <path
-         id="path3455"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 21.0,59.0 L 21.0,58.0" />
-      <path
-         id="path3457"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 21.0,58.0 L 18.0,58.0" />
-      <path
-         id="path3459"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 18.0,58.0 L 18.0,59.0" />
-      <path
-         id="path3461"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 18.0,59.0 L 19.0,60.0" />
-      <path
-         id="path3463"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 19.0,60.0 L 19.0,74.0" />
-      <path
-         id="path3465"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 19.0,74.0 L 17.0,74.0" />
-      <path
-         id="path3467"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 17.0,74.0 L 17.0,60.0" />
-      <path
-         id="path3469"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 17.0,60.0 L 16.0,60.0" />
-      <path
-         id="path3471"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 16.0,60.0 L 16.0,63.0" />
-      <path
-         id="path3473"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 16.0,63.0 L 15.0,63.0" />
-      <path
-         id="path3475"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 15.0,63.0 L 15.0,60.0" />
-      <path
-         id="path3477"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 15.0,60.0 L 13.0,60.0" />
-      <path
-         id="path3479"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 13.0,60.0 L 13.0,71.0" />
-      <path
-         id="path3481"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 13.0,71.0 L 15.0,71.0" />
-      <path
-         id="path3483"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 15.0,71.0 L 15.0,73.0" />
-      <path
-         id="path3485"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 15.0,73.0 L 12.0,73.0" />
-      <path
-         id="path3487"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 12.0,73.0 L 12.0,63.0" />
-      <path
-         id="path3489"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 12.0,63.0 L 12.0,60.0" />
-      <path
-         id="path3491"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 12.0,60.0 L 10.0,60.0" />
-      <path
-         id="path3493"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 10.0,60.0 L 10.0,80.0" />
-      <path
-         id="path3495"
-         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,197.000000)"
-         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
-         gcodetools="Preview"
-         d="M 10.0,80.0 L 5.0,92.0" />
+       id="g1085" />
+    <g
+       id="g1030" />
+    <g
+       id="g1319"
+       transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,227.000000)"
+       gcodetools="Gcodetools orientation group">
+      <g
+         id="g1301"
+         gcodetools="Gcodetools orientation point (3 points)">
+        <path
+           id="path1295"
+           style="stroke:none;fill:#000000;"
+           gcodetools="Gcodetools orientation point arrow"
+           d="m 0.0,70.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
+        <text
+           id="text1299"
+           xml:space="preserve"
+           y="60.0"
+           x="10.0"
+           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
+           gcodetools="Gcodetools orientation point text"><tspan
+             id="tspan1297"
+             sodipodi:role="line"
+             y="60.0"
+             x="10.0">(0.0; 0.0; 0.0)</tspan></text>
+      </g>
+      <g
+         id="g1309"
+         gcodetools="Gcodetools orientation point (3 points)">
+        <path
+           id="path1303"
+           style="stroke:none;fill:#000000;"
+           gcodetools="Gcodetools orientation point arrow"
+           d="m 100.0,70.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
+        <text
+           id="text1307"
+           xml:space="preserve"
+           y="60.0"
+           x="110.0"
+           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
+           gcodetools="Gcodetools orientation point text"><tspan
+             id="tspan1305"
+             sodipodi:role="line"
+             y="60.0"
+             x="110.0">(100.0; 0.0; -0.10000000149)</tspan></text>
+      </g>
+      <g
+         id="g1317"
+         gcodetools="Gcodetools orientation point (3 points)">
+        <path
+           id="path1311"
+           style="stroke:none;fill:#000000;"
+           gcodetools="Gcodetools orientation point arrow"
+           d="m 0.0,-30.0 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z" />
+        <text
+           id="text1315"
+           xml:space="preserve"
+           y="-40.0"
+           x="10.0"
+           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
+           gcodetools="Gcodetools orientation point text"><tspan
+             id="tspan1313"
+             sodipodi:role="line"
+             y="-40.0"
+             x="10.0">(0.0; 100.0; 0.0)</tspan></text>
+      </g>
     </g>
+    <g
+       id="g1451" />
+    <g
+       id="g1590" />
+    <g
+       id="g1840" />
+    <g
+       id="g2132" />
+    <g
+       id="g2436" />
   </g>
   <g
      id="g327"
-     transform="translate(0,-197)" />
+     transform="translate(0,-227)" />
   <defs
      id="defs332">
     <marker
@@ -674,5 +555,5 @@
   </defs>
   <g
      id="g5930"
-     transform="translate(0,50)" />
+     transform="translate(0,20)" />
 </svg>

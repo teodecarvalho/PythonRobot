@@ -99,23 +99,6 @@ class Robot:
             except:
                 return False
 
-    def send_gcode_file(self, file_path):
-        self.deactivate_pump()
-        with open(file_path, 'r') as file:
-            for line in file:
-                if self.hold:
-                    self.hold_activity()
-                l = line.strip()
-                self.activate_pump_if_z_negative(l)
-                self.send_gcode_str(l)
-                while True:
-                    try:
-                        status = self.send_gcode_str("?")
-                        if "Idle" in status:
-                            break
-                    except:
-                        pass
-
     def reset_zero(self):
         self.send_gcode_str("G10 P0 L20 X0 Y0 Z0")
 
