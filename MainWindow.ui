@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>797</width>
-    <height>760</height>
+    <width>1465</width>
+    <height>767</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,7 +110,7 @@
          <number>1</number>
         </property>
         <property name="maximum">
-         <number>50</number>
+         <number>10000</number>
         </property>
         <property name="value">
          <number>10</number>
@@ -124,7 +124,7 @@
       <rect>
        <x>20</x>
        <y>120</y>
-       <width>192</width>
+       <width>214</width>
        <height>27</height>
       </rect>
      </property>
@@ -153,7 +153,7 @@
       <rect>
        <x>20</x>
        <y>160</y>
-       <width>192</width>
+       <width>204</width>
        <height>27</height>
       </rect>
      </property>
@@ -291,7 +291,7 @@
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>10</y>
+      <y>80</y>
       <width>171</width>
       <height>34</height>
      </rect>
@@ -300,17 +300,17 @@
      <string>Activate pump</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="DeactivatePump">
+   <widget class="QPushButton" name="ClosePump">
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>60</y>
+      <y>120</y>
       <width>171</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>Deactivate pump</string>
+     <string>Close pump</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ConnectPump">
@@ -411,8 +411,8 @@
    <widget class="QPushButton" name="DisconnectPump">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>140</y>
+      <x>570</x>
+      <y>190</y>
       <width>171</width>
       <height>34</height>
      </rect>
@@ -424,8 +424,8 @@
    <widget class="QPushButton" name="DisconnectRobot">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>190</y>
+      <x>570</x>
+      <y>240</y>
       <width>171</width>
       <height>34</height>
      </rect>
@@ -493,14 +493,158 @@
      <string>Return to Zero</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="ResetAll">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>450</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset All</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="Polygon">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>130</y>
+      <width>591</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>110</y>
+      <width>59</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Polygon</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="Burnin">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>40</y>
+      <width>591</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>20</y>
+      <width>59</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Burnin</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="NLayers">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>330</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>848</x>
+      <y>340</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Number of layers</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="FileNameToWrite">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>390</y>
+      <width>531</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>400</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filename</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="WriteGCode">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>450</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Write GCode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StartPump">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>0</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Pump</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StopPump">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>40</y>
+      <width>171</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop Pump</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>797</width>
-     <height>22</height>
+     <width>1465</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>

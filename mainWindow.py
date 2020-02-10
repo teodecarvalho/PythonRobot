@@ -3,6 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QThread, pyqtSignal
 from Robot import Robot
+import os
 
 # Main window
 Ui_MainWindow, MainWindowBaseClass = uic.loadUiType("MainWindow.ui")
@@ -11,24 +12,8 @@ class Thread(QThread):
     signal = pyqtSignal('PyQt_PyObject')
     def __init__(self):
         QThread.__init__(self)
-        self.robot = None
-    # run method gets called when we start the thread
     def run(self):
-        self.robot.deactivate_pump()
-        with open(self.file_path, 'r') as file:
-            for line in file:
-                if self.robot.hold:
-                    self.robot.hold_activity()
-                l = line.strip()
-                self.robot.activate_pump_if_z_negative(l)
-                self.robot.send_gcode_str(l)
-                while True:
-                    try:
-                        status = self.robot.send_gcode_str("?")
-                        if "Idle" in status:
-                            break
-                    except:
-                        pass
+        self.robot.send_gcode_file(self.file_path)
 
 class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def __init__(self, robot):
@@ -36,6 +21,7 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         super(MyApp, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.fill_file_field()
 
         self.thread = Thread()
 
@@ -45,10 +31,19 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.PumpPort.setText("COM6")
         self.ui.RobotPort.setText("COM4")
 
-        self.ui.Exit.clicked.connect(self.close)
+        self.connect_robot()
+        #self.connect_pump()
+
+        self.robot.reset_zero()
+
+        self.ui.StartPump.clicked.connect(self.start_pump)
+        self.ui.StopPump.clicked.connect(self.stop_pump)
+        self.ui.ClosePump.clicked.connect(self.close_pump)
+        self.ui.WriteGCode.clicked.connect(self.write_gcode)
+        self.ui.Exit.clicked.connect(self.stop)
         self.ui.ChooseFile.clicked.connect(self.select_file)
         self.ui.ActivatePump.clicked.connect(self.activate_pump)
-        self.ui.DeactivatePump.clicked.connect(self.deactivate_pump)
+        self.ui.SendCmdPump.clicked.connect(self.send_cmd_pump)
         self.ui.ConnectPump.clicked.connect(self.connect_pump)
         self.ui.DisconnectPump.clicked.connect(self.disconnect_pump)
         self.ui.ConnectRobot.clicked.connect(self.connect_robot)
@@ -61,22 +56,59 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.Down.clicked.connect(self.move_down)
         self.ui.Hold.clicked.connect(self.send_hold_signal)
         self.ui.Resume.clicked.connect(self.resume_activity)
-        self.ui.ResetZero.clicked.connect(self.robot.reset_zero)
+        self.ui.ResetAll.clicked.connect(self.reset)
+        self.ui.ResetZero.clicked.connect(self.reset_zero)
         self.ui.SendFile.clicked.connect(self.send_gcode_file)
+        self.ui.ReturnToZero.clicked.connect(self.return_to_zero)
+        self.ui.SendCmdRobot.clicked.connect(self.send_cmd_gcode)
 
         self.ui.PumpDelay.valueChanged.connect(self.update_pump_speed)
 
+    def reset(self):
+        self.deactivate_pump()
+        self.disconnect_pump()
+        self.disconnect_robot()
+        self.connect_pump()
+        self.connect_robot()
+        self.update_pump_speed()
+
+    def write_gcode(self):
+        filename = self.ui.FileNameToWrite.text()
+        nlayers = int(self.ui.NLayers.text())
+        burnin = self.ui.Burnin.toPlainText()
+        polygon = self.ui.Polygon.toPlainText()
+        self.robot.write_gcode(nlayers, burnin, polygon, filename)
+        QMessageBox.information(QMessageBox(), "Sucess", "GCode Written!")
+
+    def send_cmd_gcode(self):
+        cmd = self.ui.CmdRobot.text()
+        self.robot.send_gcode_str(cmd)
+
+    def send_cmd_pump(self):
+        cmd = self.ui.CmdPump.text()
+        self.robot.send_cmd_pump(cmd)
+
+    def stop(self):
+        self.thread.terminate()
+        self.close()
+
+    def fill_file_field(self):
+        last_file = os.listdir("./gcode_files")[-1]
+        file = "./gcode_files/" + last_file
+        self.ui.FileName.setText(file)
+
+    def reset_zero(self):
+        self.robot.reset_zero()
+
     def send_hold_signal(self):
         self.robot.send_hold_signal()
-        self.thread.robot.send_hold_signal()
 
     def resume_activity(self):
         self.robot.resume_activity()
-        self.thread.robot.resume_activity()
 
     def send_gcode_file(self):
         self.thread.file_path = self.ui.FileName.text()
-        self.thread.robot = self.robot
+        self.update_pump_speed()
         self.thread.start()
 
     def select_file(self):
@@ -84,36 +116,41 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
 
     def activate_pump(self):
         self.robot.activate_pump()
-        self.thread.robot.activate_pump()
-        QMessageBox.information(QMessageBox(), "Sucess", "Pump Activated!")
+        self.update_pump_speed()
 
     def deactivate_pump(self):
         self.robot.deactivate_pump()
-        self.thread.robot.deactivate_pump()
-        QMessageBox.information(QMessageBox(), "Sucess", "Pump Deactivated!")
+        self.update_pump_speed()
+
+    def start_pump(self):
+        self.robot.start_pump()
+        self.update_pump_speed()
+
+    def stop_pump(self):
+        self.robot.stop_pump()
+        self.update_pump_speed()
+
+    def close_pump(self):
+        self.robot.close_pump()
+        self.update_pump_speed()
 
     def update_pump_speed(self):
         pulse = self.ui.PumpDelay.value()
         self.robot.update_pump_speed(pulse)
-        self.thread.robot.update_pump_speed(pulse)
 
     def connect_pump(self):
         pump_port = self.ui.PumpPort.text()
         self.robot.connect_pump(pump_port)
-        QMessageBox.information(QMessageBox(), "Sucess", "Pump Connected!")
 
     def disconnect_pump(self):
         self.robot.disconnect_pump()
-        QMessageBox.information(QMessageBox(), "Sucess", "Pump Disconnected!")
 
     def connect_robot(self):
         robot_port = self.ui.RobotPort.text()
         self.robot.connect_robot(robot_port)
-        QMessageBox.information(QMessageBox(), "Sucess", "Robot Connected!")
 
     def disconnect_robot(self):
         self.robot.disconnect_robot()
-        QMessageBox.information(QMessageBox(), "Sucess", "Robot Disconnected!")
 
     def move_left(self):
         step_size = self.ui.XYStepSize.value()
@@ -138,6 +175,9 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def move_down(self):
         step_size = self.ui.ZStepSize.value()
         self.robot.move_down(step_size)
+
+    def return_to_zero(self):
+        self.robot.return_to_zero()
 
 if __name__ == "__main__":
     robot = Robot()

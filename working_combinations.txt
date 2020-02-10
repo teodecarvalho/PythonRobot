@@ -1,0 +1,6 @@
+feed rate 40  ---- pump delay 80
+feed rate 20  ---- pump delay 500  (ponta fina insulina)
+feed rate 10  ---- pump delay 1000 (ponta fina insulina)
+feed rate 100  ---- pump delay 20   (ponteira pcr)
+feed rate 10  ----- pump delay 800 (ponteira amarela)
+feed rate 50 ---- pump delay 150 (pipeta Pasteur ponta afinada) --> melhor resultado
