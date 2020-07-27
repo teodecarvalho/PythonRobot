@@ -55,6 +55,10 @@ class Robot:
         cmd_str = "s" + str(pulse)
         self.pump.write(cmd_str.encode())
 
+    def move_home(self):
+        self.send_gcode_str("$H")
+        self.send_gcode_str("G90")
+
     def move_left(self, step_size):
         self.send_gcode_str("G21 G91 G0 X-" + str(step_size))
         self.send_gcode_str("G90")
@@ -128,6 +132,10 @@ class Robot:
 
     def return_to_zero(self):
         self.send_gcode_str("G90 G0 Z1.0")
+        self.send_gcode_str("G90 G0 X0 Y0 Z10")
+
+    def return_to_zero_abs(self):
+        self.send_gcode_str("G90 G0 Z1.0")
         self.send_gcode_str("G90 G0 X0 Y0 Z0")
 
     def send_gcode_file(self, file_path):
@@ -144,17 +152,18 @@ class Robot:
                     pass
             self.return_to_zero()
 
-    def write_gcode(self, nlayers, burnin, polygon, filename):
+    def write_gcode(self, dlayers, nlayers, burnin, polygon, filename):
         gcode = """
         G21
 
         G01 Z-0.050000 F300.0(Penetrate)
-        %s """ % (burnin) + """
-        %s
-        G00 Z0.500000
+        %s """ % (burnin) + polygon * nlayers + \
+        """       
+        G00 Z%s
         G10 P0 L20 Z0
-        """ % (polygon) * nlayers + """
-        G00 Z2.000000
+        """ %(dlayers)  + \
+        """
+        G00 Z10.000000
         G00 X0.0000 Y0.0000
         """
         with open(filename, "w") as file:

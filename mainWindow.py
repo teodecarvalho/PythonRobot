@@ -28,12 +28,13 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.robot = robot
         self.thread.robot = robot
 
-        self.ui.PumpPort.setText("COM6")
-        self.ui.RobotPort.setText("COM4")
+        self.ui.PumpPort.setText("/dev/tty.usbserial-1460")
+        self.ui.RobotPort.setText("/dev/tty.usbserial-14140")
 
         self.connect_robot()
-        #self.connect_pump()
+        self.connect_pump()
 
+        self.robot.move_home()
         self.robot.reset_zero()
 
         self.ui.StartPump.clicked.connect(self.start_pump)
@@ -60,6 +61,7 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.ResetZero.clicked.connect(self.reset_zero)
         self.ui.SendFile.clicked.connect(self.send_gcode_file)
         self.ui.ReturnToZero.clicked.connect(self.return_to_zero)
+        self.ui.ReturnToZeroAbs.clicked.connect(self.return_to_zero_abs)
         self.ui.SendCmdRobot.clicked.connect(self.send_cmd_gcode)
 
         self.ui.PumpDelay.valueChanged.connect(self.update_pump_speed)
@@ -75,9 +77,10 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def write_gcode(self):
         filename = self.ui.FileNameToWrite.text()
         nlayers = int(self.ui.NLayers.text())
+        dlayers = self.ui.DLayers.text()
         burnin = self.ui.Burnin.toPlainText()
         polygon = self.ui.Polygon.toPlainText()
-        self.robot.write_gcode(nlayers, burnin, polygon, filename)
+        self.robot.write_gcode(dlayers, nlayers, burnin, polygon, filename)
         QMessageBox.information(QMessageBox(), "Sucess", "GCode Written!")
 
     def send_cmd_gcode(self):
@@ -152,6 +155,9 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def disconnect_robot(self):
         self.robot.disconnect_robot()
 
+    def move_home(self):
+        self.robot.move_home()
+
     def move_left(self):
         step_size = self.ui.XYStepSize.value()
         self.robot.move_left(step_size)
@@ -178,6 +184,9 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
 
     def return_to_zero(self):
         self.robot.return_to_zero()
+
+    def return_to_zero_abs(self):
+        self.robot.return_to_zero_abs()
 
 if __name__ == "__main__":
     robot = Robot()

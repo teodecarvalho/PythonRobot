@@ -1,106 +1,82 @@
-#include <Servo.h>
+#include <Stepper.h>
+#define STEPS 2038 // Steps per revolution
+#define pinRefill 2
+#define pinDispense 3
 
-#define pinServo 9
-#define pinStep 3
-#define pinDir 4
-#define pinRefill 5
-#define pinLed 13
+float stepsPerMicroliter = STEPS / 100.00;
+const int msgSize = 20;
+char msg[msgSize];
+float volume; // Volume in microliters
+float dispensingSpeed = 5; // Dispensing speed in microliters per second
+bool continuous = LOW; // flag for continuous movement
 
-bool directionPump = HIGH;
-float pulseDelay = 100;
-unsigned long refillPulseDelay = 100;
-bool refillButtonPressed;
-bool refillDirection = LOW;
-char cmd;
-bool pumpOpen = LOW; 
-bool pumpEnabled = LOW;
+Stepper stepper(STEPS, 8, 10, 9, 11);
 
-Servo servo;
-
-void setup() {
-  servo.attach(pinServo);
-  servo.write(180);
-  pinMode(pinStep, OUTPUT);
-  pinMode(pinDir, OUTPUT);
-  pinMode(pinRefill, INPUT);
-  pinMode(pinLed, OUTPUT);
+void setup(){  
+  // Setting up the pushing buttons
+  pinMode(pinRefill, INPUT_PULLUP);
+  pinMode(pinDispense, INPUT_PULLUP);
   Serial.begin(9600);
-  Serial.println("Arduino is ready!");
+  stepper.setSpeed(((dispensingSpeed * stepsPerMicroliter)/STEPS) * 60);
 }
 
-void loop() {
-  checkSerial();
-  refill();
-  updatePump();
-  move();
-  digitalWrite(pinLed, pumpEnabled);
+void loop(){  
+  if(Serial.available()) receiveMsg();
+  if(msg[0] == 'd' && msg[1] == 'v') dispenseVolume();
+  if(msg[0] == 's' && msg[1] == 's') customSetSpeed();
+  if(msg[0] == 's' && msg[1] == 'c') continuous = HIGH;
+  if(msg[0] == 'h' && msg[1] == 'c') continuous = LOW;
+  moveContinuous();
+  checkButtons();
 }
 
-void updatePump(){
-  if(pumpOpen){
-    openPump();
-  } else {
-    closePump();
+void receiveMsg(){
+  int index = 0;
+  bool invalid = LOW;
+  // Clear msg variable
+  for(int i = 0; i < (msgSize - 1); i++) msg[i] = '\0';
+  // Check if first character is '<'
+  if(Serial.read() != '<') return;
+  delay(2);
+  while(Serial.available()){
+    msg[index] = Serial.read();
+    // Check if message is finished, if so replace '>' by '\0'
+    if(msg[index] == '>') msg[index] = '\0';
+    index++;
+    delay(2);
   }
+  // Clear message if longer than msgSize
+  if(index >= msgSize) for(int i = 0; i < (msgSize - 1); i++) msg[i] = '\0';
+  Serial.println(msg);
 }
 
-void closePump(){
-  servo.write(90);
+void moveContinuous(){
+  if(continuous) stepper.step(-10);
 }
 
-void openPump(){
-  servo.write(180);
+void dispenseVolume(){
+  long stepsToMove;
+  volume = atof(&msg[2]);
+  stepsToMove = volume * stepsPerMicroliter;
+  // The direction needs to be flipped. So I am using negative steps
+  stepper.step(-stepsToMove);
+  //Serial.print("Volume: ");
+  //Serial.println(stepsPerMicroliter);
+  //Serial.print("Steps to move: ");
+  //Serial.println(stepsToMove);
 }
 
-void move(){
-  if(pumpEnabled){
-    digitalWrite(pinDir, HIGH);
-    digitalWrite(pinStep, HIGH);
-    delay(pulseDelay);
-    digitalWrite(pinStep, LOW);
-    delay(pulseDelay);
-  }
+void customSetSpeed(){
+  float stepperSpeed;
+  dispensingSpeed = atof(&msg[2]);
+  // Convert dispensing speed from microliter per second to rotations per minute
+  stepperSpeed = ((dispensingSpeed * stepsPerMicroliter)/STEPS) * 60;
+  stepper.setSpeed(stepperSpeed);
+  //Serial.print("Speed:");
+  //Serial.println(stepperSpeed);
 }
 
-void refill(){
-  refillButtonPressed = !digitalRead(pinRefill);
-  if(refillButtonPressed){
-    digitalWrite(pinDir, refillDirection);
-    digitalWrite(pinStep, HIGH);
-    delayMicroseconds(refillPulseDelay);
-    digitalWrite(pinStep, LOW);
-    delayMicroseconds(refillPulseDelay);
-  }
-}
-
-void checkSerial(){
-  if (Serial.available() > 0){
-    cmd = Serial.read();
-    if(cmd == 'i'){
-      refillDirection = !refillDirection;
-      Serial.print("Refill direction inverted");
-    } else if(cmd == 's'){
-      pulseDelay = Serial.parseFloat();
-      Serial.print("pulseDelay changed to: ");
-      Serial.println(pulseDelay);
-    } else if(cmd == 'r'){
-      refillPulseDelay = Serial.parseInt();
-      Serial.print("refillPulseDelay changed to: ");
-      Serial.println(refillPulseDelay);
-    } else if(cmd == 'a'){
-      // Pump active and tubing opened
-      pumpOpen = HIGH;
-      pumpEnabled = HIGH;
-      Serial.println("Pump enabled");
-    } else if(cmd == 'x') {
-      // Pump active but tubing closed
-      pumpOpen = LOW;
-      pumpEnabled = HIGH;
-      Serial.println("Pump disabled");
-    } else if(cmd == 'h'){
-      // Pump inactive and tubing closed
-      pumpOpen = LOW;
-      pumpEnabled = LOW;
-    }
-  } 
+void checkButtons(){
+  if(!digitalRead(pinRefill)) stepper.step(-10);
+  if(!digitalRead(pinDispense)) stepper.step(10);
 }
