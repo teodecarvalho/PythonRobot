@@ -35,15 +35,12 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.connect_pump()
 
         self.robot.move_home()
-        self.robot.reset_zero()
 
-        self.ui.StartPump.clicked.connect(self.start_pump)
-        self.ui.StopPump.clicked.connect(self.stop_pump)
-        self.ui.ClosePump.clicked.connect(self.close_pump)
+        self.ui.StartPump.clicked.connect(self.activate_pump)
+        self.ui.StopPump.clicked.connect(self.deactivate_pump)
         self.ui.WriteGCode.clicked.connect(self.write_gcode)
         self.ui.Exit.clicked.connect(self.stop)
         self.ui.ChooseFile.clicked.connect(self.select_file)
-        self.ui.ActivatePump.clicked.connect(self.activate_pump)
         self.ui.SendCmdPump.clicked.connect(self.send_cmd_pump)
         self.ui.ConnectPump.clicked.connect(self.connect_pump)
         self.ui.DisconnectPump.clicked.connect(self.disconnect_pump)
@@ -55,24 +52,9 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.ui.Rev.clicked.connect(self.move_rev)
         self.ui.Up.clicked.connect(self.move_up)
         self.ui.Down.clicked.connect(self.move_down)
-        self.ui.Hold.clicked.connect(self.send_hold_signal)
-        self.ui.Resume.clicked.connect(self.resume_activity)
-        self.ui.ResetAll.clicked.connect(self.reset)
-        self.ui.ResetZero.clicked.connect(self.reset_zero)
         self.ui.SendFile.clicked.connect(self.send_gcode_file)
-        self.ui.ReturnToZero.clicked.connect(self.return_to_zero)
-        self.ui.ReturnToZeroAbs.clicked.connect(self.return_to_zero_abs)
         self.ui.SendCmdRobot.clicked.connect(self.send_cmd_gcode)
-
-        self.ui.PumpDelay.valueChanged.connect(self.update_pump_speed)
-
-    def reset(self):
-        self.deactivate_pump()
-        self.disconnect_pump()
-        self.disconnect_robot()
-        self.connect_pump()
-        self.connect_robot()
-        self.update_pump_speed()
+        #self.ui.PumpDelay.valueChanged.connect(self.update_pump_speed)
 
     def write_gcode(self):
         filename = self.ui.FileNameToWrite.text()
@@ -100,18 +82,9 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         file = "./gcode_files/" + last_file
         self.ui.FileName.setText(file)
 
-    def reset_zero(self):
-        self.robot.reset_zero()
-
-    def send_hold_signal(self):
-        self.robot.send_hold_signal()
-
-    def resume_activity(self):
-        self.robot.resume_activity()
-
     def send_gcode_file(self):
         self.thread.file_path = self.ui.FileName.text()
-        self.update_pump_speed()
+        #self.update_pump_speed()
         self.thread.start()
 
     def select_file(self):
@@ -119,27 +92,16 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
 
     def activate_pump(self):
         self.robot.activate_pump()
-        self.update_pump_speed()
+#        self.update_pump_speed()
 
     def deactivate_pump(self):
         self.robot.deactivate_pump()
-        self.update_pump_speed()
+ #       self.update_pump_speed()
 
-    def start_pump(self):
-        self.robot.start_pump()
-        self.update_pump_speed()
 
-    def stop_pump(self):
-        self.robot.stop_pump()
-        self.update_pump_speed()
-
-    def close_pump(self):
-        self.robot.close_pump()
-        self.update_pump_speed()
-
-    def update_pump_speed(self):
-        pulse = self.ui.PumpDelay.value()
-        self.robot.update_pump_speed(pulse)
+#    def update_pump_speed(self):
+#        pulse = self.ui.PumpDelay.value()
+#        self.robot.update_pump_speed(pulse)
 
     def connect_pump(self):
         pump_port = self.ui.PumpPort.text()
@@ -181,12 +143,6 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
     def move_down(self):
         step_size = self.ui.ZStepSize.value()
         self.robot.move_down(step_size)
-
-    def return_to_zero(self):
-        self.robot.return_to_zero()
-
-    def return_to_zero_abs(self):
-        self.robot.return_to_zero_abs()
 
 if __name__ == "__main__":
     robot = Robot()
