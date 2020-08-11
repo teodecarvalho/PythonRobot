@@ -7,11 +7,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="desenhando.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="padrao_lamina.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    width="25mm"
-   height="70mm"
-   viewBox="0 0 25 70"
+   height="75mm"
+   viewBox="0 0 25 75"
    version="1.1"
    id="svg1299">
   <defs
@@ -25,7 +25,8 @@
       <path
          d="m 4.588864,-1.687441 v 0 L 9.177728,0 c -0.73311,-0.996261 -0.728882,-2.359329 0,-3.374882"
          style="fill:#000044;fill-rule:evenodd;stroke:none"
-         id="path3892" />
+         id="path3892"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        id="DrawCurveMarker"
@@ -36,7 +37,8 @@
       <path
          d="m 4.588864,-1.687441 v 0 L 9.177728,0 c -0.73311,-0.996261 -0.728882,-2.359329 0,-3.374882"
          style="fill:#000044;fill-rule:evenodd;stroke:none"
-         id="path3895" />
+         id="path3895"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        id="DrawCurveMarker_r"
@@ -47,7 +49,8 @@
       <path
          d="m -4.588864,-1.687441 v 0 L -9.177728,0 c 0.73311,-0.996261 0.728882,-2.359329 0,-3.374882"
          style="fill:#000044;fill-rule:evenodd;stroke:none"
-         id="path3898" />
+         id="path3898"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        id="InOutPathMarker"
@@ -58,23 +61,24 @@
       <path
          d="m 4.588864,-1.687441 v 0 L 9.177728,0 c -0.73311,-0.996261 -0.728882,-2.359329 0,-3.374882"
          style="fill:#0072a7;fill-rule:evenodd;stroke:none"
-         id="path3901" />
+         id="path3901"
+         inkscape:connector-curvature="0" />
     </marker>
   </defs>
   <sodipodi:namedview
      inkscape:snap-intersection-paths="true"
-     inkscape:window-maximized="0"
-     inkscape:window-y="0"
-     inkscape:window-x="130"
-     inkscape:window-height="967"
-     inkscape:window-width="1518"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="1046"
+     inkscape:window-width="1920"
      showgrid="true"
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="149.90957"
-     inkscape:cx="56.785216"
-     inkscape:zoom="2.8"
+     inkscape:cy="152.95395"
+     inkscape:cx="-108.35285"
+     inkscape:zoom="1.979899"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -82,8 +86,8 @@
      pagecolor="#ffffff"
      id="base">
     <inkscape:grid
-       type="xygrid"
-       id="grid1052" />
+       id="grid1052"
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata1296">
@@ -100,13 +104,15 @@
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(0,5)">
     <path
        d="M 0,0.52916664 H 70.692787 V 25.385232 H 0 Z"
-       style="fill:none;stroke-width:2.075;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect3691" />
+       style="fill:none;stroke-width:2.07500005;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect3691"
+       inkscape:connector-curvature="0" />
     <g
-       transform="translate(0, 45.1146)"
+       transform="translate(0,45.1146)"
        gcodetools="Gcodetools orientation group"
        id="g3714">
       <g
@@ -116,7 +122,8 @@
            style="fill:#000000;stroke:none"
            gcodetools="Gcodetools orientation point arrow"
            d="M 0,25 2.9375,18.65625 3.75,20.5625 10.59375,13.71875 v 0 l 0.6875,0.6875 L 4.4375,21.25 6.34375,22.0625 Z"
-           id="path3698" />
+           id="path3698"
+           inkscape:connector-curvature="0" />
         <text
            x="10"
            xml:space="preserve"
@@ -136,7 +143,8 @@
            style="fill:#000000;stroke:none"
            gcodetools="Gcodetools orientation point arrow"
            d="m 100,25 2.9375,-6.34375 0.8125,1.90625 6.84375,-6.84375 v 0 l 0.6875,0.6875 -6.84375,6.84375 1.90625,0.8125 z"
-           id="path3706" />
+           id="path3706"
+           inkscape:connector-curvature="0" />
         <text
            x="110"
            xml:space="preserve"
@@ -158,7 +166,8 @@
          gcodetools="Gcodetools tool background"
          style="fill-opacity:0.5;stroke:#444444"
          d="M -20,-20 H 380 V 155 H -20 Z"
-         id="path3749" />
+         id="path3749"
+         inkscape:connector-curvature="0" />
       <g
          gcodetools="Gcodetools tool parameter"
          id="g3759">
@@ -378,10 +387,6 @@
     <g
        id="g1035"
        gcodetools="Preview group" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.502011px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 2.9104166,68.791667 v -47.625 H 16.139583 v 47.625 H 5.5562499 V 50.270833 h 7.9374991 v 15.875 H 8.2020833 V 52.916667 H 10.847916 V 63.5"
-       id="path1054" />
     <g
        id="g1148" />
     <g
@@ -409,79 +414,89 @@
     <g
        id="g1018" />
     <g
-       gcodetools="Preview group"
-       id="g1042">
+       id="g1040" />
+    <g
+       id="g1032" />
+    <g
+       id="g1149" />
+    <g
+       id="g1271" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 5,64.999999 V 5.203412e-7 H 20 V 64.999999 H 15 V 5.0000005 H 10 V 64.999999"
+       id="path1300"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g1386" />
+    <g
+       id="g1402"
+       gcodetools="Preview group">
       <path
+         id="path1388"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 2.91042 68.7917 L 2.91042 21.1667"
-         id="path1020" />
+         d="M 5.0,69.999999 L 5.0,5.00000052034" />
       <path
+         id="path1390"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 2.91042 21.1667 L 16.1396 21.1667"
-         id="path1022" />
+         d="M 5.0,5.00000052034 L 20.0,5.00000052034" />
       <path
+         id="path1392"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 16.1396 21.1667 L 16.1396 68.7917"
-         id="path1024" />
+         d="M 20.0,5.00000052034 L 20.0,69.999999" />
       <path
+         id="path1394"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 16.1396 68.7917 L 5.55625 68.7917"
-         id="path1026" />
+         d="M 20.0,69.999999 L 15.0,69.999999" />
       <path
+         id="path1396"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 5.55625 68.7917 L 5.55625 50.2708"
-         id="path1028" />
+         d="M 15.0,69.999999 L 15.0,10.0000005" />
       <path
+         id="path1398"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 5.55625 50.2708 L 13.4937 50.2708"
-         id="path1030" />
+         d="M 15.0,10.0000005 L 10.0,10.0000005" />
       <path
+         id="path1400"
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,-5.000000)"
+         style="stroke:#f88;stroke-width:1;marker-end:url(#DrawCurveMarker);fill:none"
          gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 13.4937 50.2708 L 13.4937 66.1458"
-         id="path1032" />
-      <path
-         gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 13.4937 66.1458 L 8.20208 66.1458"
-         id="path1034" />
-      <path
-         gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 8.20208 66.1458 L 8.20208 52.9167"
-         id="path1036" />
-      <path
-         gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 8.20208 52.9167 L 10.8479 52.9167"
-         id="path1038" />
-      <path
-         gcodetools="Preview"
-         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
-         d="M 10.8479 52.9167 L 10.8479 63.5"
-         id="path1040" />
+         d="M 10.0,10.0000005 L 10.0,69.999999" />
     </g>
   </g>
   <g
-     id="g1662" />
+     id="g1662"
+     transform="translate(0,5)" />
   <g
-     id="g1745" />
+     id="g1745"
+     transform="translate(0,5)" />
   <g
-     id="g1820" />
+     id="g1820"
+     transform="translate(0,5)" />
   <g
-     id="g1897" />
+     id="g1897"
+     transform="translate(0,5)" />
   <g
-     id="g2254" />
+     id="g2254"
+     transform="translate(0,5)" />
   <g
-     id="g3167" />
+     id="g3167"
+     transform="translate(0,5)" />
   <g
-     id="g291" />
+     id="g291"
+     transform="translate(0,5)" />
   <g
-     id="g917" />
+     id="g917"
+     transform="translate(0,5)" />
 </svg>

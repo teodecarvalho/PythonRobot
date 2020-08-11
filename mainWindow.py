@@ -28,8 +28,8 @@ class MyApp(MainWindowBaseClass, Ui_MainWindow):  # gui class
         self.robot = robot
         self.thread.robot = robot
 
-        self.ui.PumpPort.setText("/dev/tty.usbserial-1460")
-        self.ui.RobotPort.setText("/dev/tty.usbserial-14140")
+        self.ui.PumpPort.setText("COM4")
+        self.ui.RobotPort.setText("COM6")
 
         self.connect_robot()
         self.connect_pump()
